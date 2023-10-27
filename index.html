@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content1="width=device-width, initial-scale=1.0">
+    <title>Grid Layout for Websites</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter';
+        }
+
+
+         /* Layout 1 using grid template areas */
+        .layout1 {
+            height: 100vh;
+            border: 1px solid;
+            margin-bottom: 100px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-template-areas: "header1 header1 header1 header1 header1"
+                                 "subTopics1 content1 content1 content1 content1"
+                                 "subTopics1 content1 content1 content1 content1"
+                                 "subTopics1 content1 content1 content1 content1"
+                                 "subTopics1 content1 content1 content1 content1"
+                                 "footer1 footer1 footer1 footer1 footer1";
+
+        }
+
+        .sections1 {
+            width: 100%;
+            border: 2px solid;
+
+            /* only for aligning the elements in each div */
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+
+        #header1 {
+            background-color: red;
+            grid-area: header1;
+        }
+
+        #sub-topics1 {
+            background-color: yellow;
+            grid-area: subTopics1;
+        }
+
+        #content1 {
+            background-color: green;
+            grid-area: content1;
+        }
+
+        #footer1 {
+            background-color: peru;
+            grid-area: footer1;
+        }
+
+
+        /* Layout 2 using individual grid area */
+        /* grid area syntax */
+        /* grid area: row-start / col-start / row-end / col-end */
+
+        .layout2 {
+            height: 100vh;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .sections2 {
+            width: 100%;
+            border: 2px solid;
+
+            /* only for aligning the elements in each div */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #header2 {
+            background-color: red;
+            grid-area: 1 / 1 / 1 / 6;
+        }
+
+        #sub-topics2 {
+            background-color: yellow;
+            grid-area: 2 / 1 / 6 / 2;
+        }
+
+        #content2 {
+            background-color: green;
+            grid-area: 2 / 2 / 6 / 6;
+        }
+
+        #footer2 {
+            background-color: peru;
+            grid-area: 6 / 1 / 6 / 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout1">
+        <div class="sections1" id="header1">
+            <p>Header1</p>
+        </div>
+        <div class="sections1" id="sub-topics1">
+            <p>Sub Topics1</p>
+        </div>
+        <div class="sections1" id="content1">
+            <p>Content1</p>
+        </div>
+        <div class="sections1" id="footer1">
+            <p>Footer1</p>
+        </div>
+    </div>
+
+
+    <div class="layout2">
+        <div class="sections2" id="header2">
+            <p>Header2</p>
+        </div>
+        <div class="sections2" id="sub-topics2">
+            <p>Sub Topics2</p>
+        </div>
+        <div class="sections2" id="content2">
+            <p>Content2</p>
+        </div>
+        <div class="sections2" id="footer2">
+            <p>Footer2</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
